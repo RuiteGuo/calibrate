@@ -1,10 +1,12 @@
 function [rgb_stack, gray_stack] = loadFocalStack(focal_stack_dir)
 
-
+% load images
 f= dir(fullfile('stack', '*.jpg'));
 files = {f.name};
 n_images = length(files);
+
 [a, b, c] = size(imread(strcat(focal_stack_dir,'/',files{1})));
+
 rgb_stack = uint8(zeros(a, b, 3*length(files)));
 gray_stack = uint8(zeros(a, b, length(files)));
 for i = 1:length(files)
