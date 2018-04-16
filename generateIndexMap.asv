@@ -6,5 +6,5 @@ average = fspecial('average',w_size*2);
 for i = 1:n_images
     filtered_im = imfilter(gray_stack(:, :, i), laplacian);
     average_values = imfilter(filtered_im, average)
-    imshow(average_values);
+    %imshow(average_values);
 end
